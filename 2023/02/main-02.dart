@@ -108,10 +108,11 @@ void main() async {
   final Stopwatch stopwatch = Stopwatch()..start();
   
   final List<Game> games = lines.map((e) => Game.fromString(e)).toList();
-
-  final validGames = games.where((e) => e.isValid(12, 13, 14)).toList();
-  int ids = validGames.fold(0, (a, b) => a + b.id);
+  int totalPower = 0;
+  for (var game in games) {
+    totalPower += game.getPower();
+  }
 
   stopwatch.stop();
-  print('Found answer: $ids in: ${stopwatch.elapsedMilliseconds}ms');
+  print('Found answer: $totalPower in: ${stopwatch.elapsedMilliseconds}ms');
 }
