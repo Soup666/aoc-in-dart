@@ -1,0 +1,11 @@
+include: package:very_good_analysis/analysis_options.5.1.0.yaml
+
+analyzer:
+  exclude:
+
+linter:
+  rules:
+    flutter_style_todos: false
+    avoid_print: false
+    no_leading_underscores_for_local_identifiers: false
+    omit_local_variable_types: false
